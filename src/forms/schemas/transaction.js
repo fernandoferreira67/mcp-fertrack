@@ -12,3 +12,8 @@ export const createTransactionFormSchema = z.object({
   }),
   type: z.enum(['EARNING', 'EXPENSE', 'INVESTMENT']),
 })
+
+//Extendo a objeto e adiciono o campo necessário
+export const editTransactionFormSchema = createTransactionFormSchema.extend({
+  id: z.string().uuid(),
+})
